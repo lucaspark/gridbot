@@ -55,6 +55,21 @@ h6, .h6 {
 	line-height: $lh - 0.3;
 }
 
+@include bp(mobile) {
+	h1, .h1 {
+		font-size: $h1-size * 0.875;
+	}
+	h2, .h2 {
+		font-size: $h2-size * 0.875;
+	}
+	h3, .h3 {
+		font-size: $h3-size * 0.875;
+	}
+	h4, .h4 {
+		font-size: $h4-size * 0.875;
+	}
+}
+
 
 // Paragraph
 
@@ -154,7 +169,7 @@ sub {
 // Keystroke
 
 .key, kbd {
-  background-color: lighten($link-color, 40%);
+  background-color: lighten($link-color, 20%);
   color: adjust-color($link-color, $saturation: -20%, $lightness: -5%);
   padding:3px;
   border-radius:3px;

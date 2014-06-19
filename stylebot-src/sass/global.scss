@@ -5,6 +5,7 @@ Licensed Under the MIT License.
 https://github.com/lucaspark/gridbot
 */
 
+@import "mixins";
 
 // -------------------
 // IMPORTANT VARIABLES
@@ -19,9 +20,9 @@ $maxWidth:    	1200px;       	// Maximum width of .container class
 
 // Grid Settings
 
-$columns:     12;
-$col-width:   100% / $columns;
-$gutter:      2%;
+$columns:     	12;
+$col-width:   	100% / $columns;
+$gutter:      	2%;
 
 // Border Radius
 
@@ -82,7 +83,7 @@ $tbl-bg:		$white;
 $tbl-text:		$black;
 $tbl-bdr:		$form-color;
 $tbl-hover:		$silver;
-$tbl-padding: 	8px;
+$tbl-padding: 	rem(8px);
 
 // Mobile Menu
 
@@ -98,12 +99,6 @@ RESET EVERYTHING
 */
 
 @import "reset";
-
-//------------------
-// MIXINS
-//------------------
-
-@import "mixins";
 
 /* 
 --------------------
