@@ -1,0 +1,83 @@
+/*
+alert-warn: yellow
+alert-neg: red
+alert-fyi: blue
+alert-pos: green
+*/
+
+.alert {
+  padding: rem(20px) rem(25px);
+  margin: rem(16px) 0;
+  font-size: $font-size;
+  border: none;
+  border-radius: $br;
+  // Alert Icon
+  &:before{
+    position: relative;
+    top: 2px;
+    left: -10px;
+    font-family: "icons";
+    font-size: $font-size * 1.4;
+    line-height: $font-size * 1.2;
+    opacity:0.8;
+  }
+  // Alert Close
+  .close {
+    position:relative;
+    top: 5px;
+    right: -5px;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    line-height:inherit;
+    display:inline-block;
+    color: inherit;
+  }
+  a {
+    font-weight: 700;
+  }
+  p, ul {
+    margin-bottom: 0;
+    padding-left:20px;
+    padding-bottom:1em;
+  }
+  p + p {
+    margin-top: 5px;
+  }
+}
+
+// Labels
+
+.label {
+  display: inline;
+  padding: .2em .6em .3em;
+  font-size: 60%;
+  font-weight: bold;
+  font-family: $font;
+  line-height: 1;
+  color: $white;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: 20%;
+  border-radius: $br;
+  &[href] {
+    &:hover,
+    &:focus {
+      color: $white;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+  &:empty {
+    display: none;
+  }
+  .btn & {
+    position: relative;
+    top: -1px;
+  }
+}
+@each $color, $color-value in $colors {
+  .label-#{$color}{
+    background: $color;
+  }
+}

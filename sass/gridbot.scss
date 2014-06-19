@@ -1,0 +1,90 @@
+/*
+GridBot (c) 2014 lucaspark
+Licensed under the MIT license.
+https://github.com/lucaspark/gridbot
+*/
+
+
+// Grid Settings
+
+$columns:     12;
+$gutter:      2%;
+$break:       768px;          // Main breakpoint between "Desktop" and "Mobile" views
+$maxWidth:    1200px;         // Maximum width of .container class
+
+@mixin bp($breakpoint) {
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: $break) { @content; }
+  }
+  @if $breakpoint == desktop {
+    @media only screen and (min-width: $break) { @content; }
+  }
+}
+
+$col-width:   100% / $columns;
+
+
+// Container Settings
+
+section {
+  width: 100%;
+}
+
+.container {
+  width: 97%;
+  max-width: $maxWidth;
+  margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.group {
+  zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  margin: 1em (-1 * $gutter);
+}
+
+
+// The Grid
+
+%grid {
+  margin: $gutter;
+  float:left;
+  min-height:1px;
+  width: 100% - (2 * $gutter);
+}
+
+@for $i from 1 through $columns {
+  .d#{$i} {
+    @extend %grid;
+  }
+}
+
+@include bp(mobile) {
+  @for $i from 1 through $columns {
+    .m#{$i} {
+      width: ($col-width * $i) - (2 * $gutter);
+    }
+  }
+}
+
+@include bp(desktop) {
+  @for $i from 1 through $columns {
+    .d#{$i} {
+      width: ($col-width * $i) - (2 * $gutter);
+    }
+    .o#{$i} {
+      margin-left: $col-width * $i;
+    }
+  }
+  .flip {
+    float: right;  // Change orientation of grids from Desktop to Mobile sizes.
+  }
+}

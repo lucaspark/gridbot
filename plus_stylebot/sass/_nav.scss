@@ -1,0 +1,113 @@
+.nav {
+	z-index: 1020;
+    width: 100%;
+    background: $nav-bg;
+    border: 1px solid $nav-color;
+ 	ul {
+		position: relative;
+		left: 0;
+	    top: 0;
+	    list-style: none;
+	    margin: 0;
+	    padding: 0;
+	    z-index: 1010;
+	    &:focus {
+	    	outline: 0;
+	    }
+	}
+	li {
+		position: relative;
+		a {
+			padding: rem(5px) rem(20px);
+			border: 1px solid transparent;
+			border-radius: $br;
+			border-left: none;
+			border-right: none;
+			transition: background .2s ease-in-out;
+			color: darken($nav-color, 5%);
+			&:hover, &:focus {
+				background: lighten($nav-hover, 10%);
+			}
+		}
+		// Disabled Links
+		&.disabled a {
+			background-image: none;
+    		border-color: transparent;
+    		cursor: default;
+    		&:hover, &:focus {
+    			background: $white;
+				color: $silver;
+    		}
+    	}
+    	// Active Links
+    	&.active a {
+    		color: darken($nav-active, 20%);
+    		background: lighten($nav-hover, 10%);
+    	}
+	}
+	a, .nav-title {
+		display: block;
+		color: inherit;
+		line-height: $lh;
+		padding: rem(5px) rem(20px);
+		text-decoration: none;
+		white-space: nowrap;
+	}
+	// Headings
+	.nav-title {
+		color: darken($nav-color, 20%);
+		text-transform: uppercase;
+		font-size: 90%;
+		margin-top: rem(8px);
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: lighten($nav-hover, 10%);
+	}
+	.nav-hidden {
+    	display: none;
+	}
+	.nav-hr {
+	    background-color: lighten($nav-hover, 10%);
+	    display: block;
+	    height: 1px;
+	    font-size: 0;
+	    margin: rem(8px) rem(2px);
+	    overflow: hidden;
+	}
+	// Fixed Nav
+	&.nav-fixed {
+		position: fixed;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	border: none;
+    	background: $nav-bg;
+    	border-bottom: 1px solid $nav-color !important;
+	}
+	// Horizontal Navigation
+	&.nav-horizontal {
+		border: none;
+		.nav-title, ul, li {
+			display: inline-block;
+			margin: 0;
+			vertical-align: middle;
+		}
+		.nav-title {
+			margin: rem(3px) 0 0;
+			border: none;
+		}
+		li li {
+			display: block;
+			&.nav-hr {
+				height: 1px;
+				width: auto;
+				margin: rem(8px) rem(2px);
+			}
+		}
+		li.nav-hr {
+			height: 50%;
+			width: 1px;
+			margin: 0 rem(8px);
+		}
+	}
+}
