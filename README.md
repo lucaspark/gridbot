@@ -5,10 +5,10 @@ Gridbot
 
 
 ---
-Gridbot is (yet) another grid, with the advantage of being extremely lightweight, easy-to-use, with allowance of different grid sizes for mobile browser widths (as opposed to 100% width for any and all content). 
+Gridbot is (yet) another grid, with the advantage of being extremely lightweight, easy-to-use, with allowance of different grid sizes for mobile browser widths (as opposed to 100% width for any and all content with most lightweight grids). 
 
 
-Visit the [GridBot] page for more detail information as well as exmamples; however, a basic structure is below: 
+Visit the [GridBot] page for more detailed information as well as examples; however, a basic structure is below: 
 
 ---
 
