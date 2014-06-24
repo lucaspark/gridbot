@@ -30,12 +30,23 @@ section {
   width: 100%;
 }
 
+.clearfix {
+  zoom: 1;
+  &:before, 
+  &:after {
+    content: " ";
+    display: table; 
+  }
+  &:after {
+    clear: both; 
+  }
+}
+
 .container {
-  width: 97%;
+  width: 100%;
   max-width: $maxWidth;
   margin: 0 auto;
   position: relative;
-  overflow-x: hidden;
 }
 
 .group {
@@ -48,7 +59,11 @@ section {
   &:after {
     clear: both;
   }
-  margin: 1em (-1 * $gutter);
+  margin-bottom: 1em;
+  .group {
+    margin-left: -1 * $gutter;
+    margin-right: -1 * $gutter;
+  }
 }
 
 

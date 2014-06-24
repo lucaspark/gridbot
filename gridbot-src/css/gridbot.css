@@ -6,21 +6,31 @@ https://github.com/lucaspark/gridbot
 section {
   width: 100%; }
 
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
 .container {
-  width: 97%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  overflow-x: hidden; }
+  position: relative; }
 
 .group {
   zoom: 1;
-  margin: 1em -2%; }
+  margin-bottom: 1em; }
   .group:before, .group:after {
     content: " ";
     display: table; }
   .group:after {
     clear: both; }
+  .group .group {
+    margin-left: -2%;
+    margin-right: -2%; }
 
 .d1, .d2, .d3, .d4, .d5, .d6, .d7, .d8, .d9, .d10, .d11, .d12 {
   margin: 2%;
