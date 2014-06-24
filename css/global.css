@@ -1425,7 +1425,7 @@ body {
     left: -15px;
     top: 61%}
 @media screen and (max-width:768px) {
-    .bubble: after {
+    .bubble:after {
     content: '';
     position: absolute;
     border-style: solid;
@@ -1441,7 +1441,8 @@ body {
     font-size: 18px;
     text-align: center;
 }
-}.footer {
+}
+.footer {
     margin-top: 60px;
     padding: 20px;
     background: #DECDBA;
