@@ -96,7 +96,7 @@ section {
       width: ($col-width * $i) - (2 * $gutter);
     }
     .o#{$i} {
-      margin-left: $col-width * $i;
+      margin-left: ($col-width * $i) + $gutter;
     }
   }
   .flip {
